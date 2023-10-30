@@ -63,6 +63,12 @@ class ProductsService {
     return { id };
   }
 
+  async getByCategory(id) {
+    return await models.Product.findAll({where: {
+      categoryId: id
+    }})
+  }
+
 }
 
 module.exports = ProductsService;
